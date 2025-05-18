@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Semangat Buat Aqilah!</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffd6e0, #ffeacb);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            color: #444;
+        }
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff8fab;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HAIII SAYANGGKUU AQILAH CANTIKKKK 💖</h1>
+    <div id="message-box" class="popup"></div>
+    <button onclick="nextMessage()">Lihat Lagi!</button>
+
+    <script>
+        const messages = [
+            "Ayoo donggg belajarr kan besok kamu ujian ketok kimiaa 🧪💥",
+            "Maafin akuu yaa perihal tadiii 😢💗",
+            "ayoo belajarr sayangg jangan di nanti nantii 📚✨",
+            "nantii malah ngantuk dan gabisa belajar lohhh 😴📉",
+            "kalo mau ditemeninn bilang aku yaa sayangg 🤗💬",
+            "I LOVE YOUUU SEMANGATT SAYANGKUUU 💘🔥"
+        ];
+
+        let index = 0;
+
+        function nextMessage() {
+            const box = document.getElementById("message-box");
+            box.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        }
+
+        window.onload = nextMessage;
+    </script>
+</body>
+</html>
